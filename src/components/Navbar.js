@@ -1,6 +1,7 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   const [query, setQuery] = useState('');
@@ -8,16 +9,23 @@ const Navbar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?query=${query}`);
+    if (query) {
+      navigate(`/search?query=${query}`);
+    }
   };
 
   return (
     <nav className="navbar">
-      <h1>Movie App</h1>
-      <form onSubmit={handleSearch}>
+      <Link to="/" className="navbar-logo">MovieDb</Link>
+      <div className="navbar-links">
+        <Link to="/">Popular</Link>
+        <Link to="/top-rated">Top Rated</Link>
+        <Link to="/upcoming">Upcoming</Link>
+      </div>
+      <form onSubmit={handleSearch} className="navbar-search">
         <input
           type="text"
-          placeholder="Search for movies..."
+          placeholder="Movie Name"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

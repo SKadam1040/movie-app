@@ -1,0 +1,44 @@
+/* src/components/MovieList.css */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+  }
+  
+  .movie-card {
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-title {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #f39c12;
+    text-decoration: none;
+  }
+  
+  .movie-title:hover {
+    text-decoration: underline;
+  }
+  
+  .movie-rating {
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
